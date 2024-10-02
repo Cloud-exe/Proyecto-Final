@@ -1,69 +1,374 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
 </head>
+<nav class="block w-4/5 px-4 py-2 mx-auto bg-white  shadow-md rounded-md lg:px-8 lg:py-3 mt-10">
+  <div class="container flex flex-wrap items-center justify-between mx-auto text-slate-800">
+    <a href="/index.html" class="mr-4 block cursor-pointer py-1.5 text-base text-slate-800 font-semibold">
+      <img class="h-24" src="/img/logo.png" alt="logo">
+    </a>
+
+
+    <div class="hidden lg:block">
+      <ul class="flex flex-col gap-2 mt-2 mb-4 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
+        <li class="flex items-center p-1 text-sm gap-x-2 text-slate-600">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="h-6 w-6 text-slate-500">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 0 0 2.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 0 0-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75 2.25 2.25 0 0 0-.1-.664m-5.8 0A2.251 2.251 0 0 1 13.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25ZM6.75 12h.008v.008H6.75V12Zm0 3h.008v.008H6.75V15Zm0 3h.008v.008H6.75V18Z" />
+          </svg>
+
+          <a href="#" class="flex items-center">
+            Inicio
+          </a>
+        </li>
+        <li class="flex items-center p-1 text-sm gap-x-2 text-slate-600">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="h-6 w-6 text-slate-500">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+          </svg>
+
+          <a href="#" class="flex items-center">
+            Blog
+          </a>
+        </li>
+        <li class="flex items-center p-1 text-sm gap-x-2 text-slate-600">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="h-6 w-6 text-slate-500">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M2.25 7.125C2.25 6.504 2.754 6 3.375 6h6c.621 0 1.125.504 1.125 1.125v3.75c0 .621-.504 1.125-1.125 1.125h-6a1.125 1.125 0 0 1-1.125-1.125v-3.75ZM14.25 8.625c0-.621.504-1.125 1.125-1.125h5.25c.621 0 1.125.504 1.125 1.125v8.25c0 .621-.504 1.125-1.125 1.125h-5.25a1.125 1.125 0 0 1-1.125-1.125v-8.25ZM3.75 16.125c0-.621.504-1.125 1.125-1.125h5.25c.621 0 1.125.504 1.125 1.125v2.25c0 .621-.504 1.125-1.125 1.125h-5.25a1.125 1.125 0 0 1-1.125-1.125v-2.25Z" />
+          </svg>
+
+          <a href="/pages/about.html" class="flex items-center">
+            Quienes Somos
+          </a>
+        </li>
+        <li class="flex items-center p-1 text-sm gap-x-2 text-slate-600">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="h-6 w-6 text-slate-500">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" />
+          </svg>
+
+          <a href="#" class="flex items-center">
+            Tutorial
+          </a>
+        </li>
+      </ul>
+    </div>
+    <button
+      class="relative ml-auto h-6 max-h-[40px] w-6 max-w-[40px] select-none rounded-lg text-center align-middle text-xs font-medium uppercase text-inherit transition-all hover:bg-transparent focus:bg-transparent active:bg-transparent disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none lg:hidden"
+      type="button">
+      <span class="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </span>
+    </button>
+  </div>
+</nav>
 
 <body>
-  <!-- Header Section -->
-<header>
-  <nav>
-    <ul>
-      <li><a href="#">News</a></li>
-      <li><a href="#">Game Information</a></li>
-      <li><a href="#">Community Forums</a></li>
-    </ul>
-  </nav>
-  <div class="search-bar">
-    <input type="search" placeholder="Search...">
-    <button type="submit">Search</button>
+  <div class="w-4/5 mt-16 m-auto">
+    <img class=" w-full" src="/img/bannerok.jpg" alt="">
+
+    <div>
+      <p class="block mb-4 text-sm text-center text-slate-500 md:mb-0 border-t border-slate-200 mt-4 pt-4">
+
+    </div>
+
+    <div class="flex flex-row justify-between w-full">
+      <div class="relative flex flex-col my-6 bg-white shadow-sm border border-slate-200 rounded-lg w-96">
+        <div class="p-4">
+          <h5 class="mb-2 text-slate-800 text-xl font-semibold">
+            Website Review Check Update from Our Team in San Francisco
+          </h5>
+          <p class="text-slate-600 leading-normal font-light">
+            The place is close to Barceloneta Beach and bus stop just 2 min by walk and near to Naviglio where you can
+            enjoy the main night life in Barcelona.
+          </p>
+        </div>
+        <div class="mx-3 border-t border-slate-200 pb-3 pt-2 px-1">
+          <span class="text-sm text-slate-600 font-medium">
+            Last updated: 4 hours ago
+          </span>
+        </div>
+      </div>
+
+      <div class="relative flex flex-col my-6 bg-white shadow-sm border border-slate-200 rounded-lg w-96">
+        <div class="p-4">
+          <h5 class="mb-2 text-slate-800 text-xl font-semibold">
+            Website Review Check Update from Our Team in San Francisco
+          </h5>
+          <p class="text-slate-600 leading-normal font-light">
+            The place is close to Barceloneta Beach and bus stop just 2 min by walk and near to Naviglio where you can
+            enjoy the main night life in Barcelona.
+          </p>
+        </div>
+        <div class="mx-3 border-t border-slate-200 pb-3 pt-2 px-1">
+          <span class="text-sm text-slate-600 font-medium">
+            Last updated: 4 hours ago
+          </span>
+        </div>
+      </div>
+
+      <div class="relative flex flex-col my-6 bg-white shadow-sm border border-slate-200 rounded-lg w-96">
+        <div class="p-4">
+          <h5 class="mb-2 text-slate-800 text-xl font-semibold">
+            Website Review Check Update from Our Team in San Francisco
+          </h5>
+          <p class="text-slate-600 leading-normal font-light">
+            The place is close to Barceloneta Beach and bus stop just 2 min by walk and near to Naviglio where you can
+            enjoy the main night life in Barcelona.
+          </p>
+        </div>
+        <div class="mx-3 border-t border-slate-200 pb-3 pt-2 px-1">
+          <span class="text-sm text-slate-600 font-medium">
+            Last updated: 4 hours ago
+          </span>
+        </div>
+      </div>
+    </div>
+
+
+    <div>
+
+    </div>
+
+    <div>
+      <p class="block mb-4 text-3xl text-center text-slate-500 md:mb-0 border-t border-slate-200 mt-4 pt-4">
+        Zonas
+      </p>
+    </div>
+
+    <div class="flex flex-row justify-between w-full">
+
+      <div class="relative flex flex-col my-6 bg-white shadow-sm border border-slate-200 rounded-lg w-96">
+        <div class="relative h-56 m-2.5 overflow-hidden text-white rounded-md">
+          <img src="/img/m1.avif" alt="card-image" />
+        </div>
+        <div class="p-4">
+          <h6 class="mb-2 text-slate-800 text-xl font-semibold">
+            KHAZ ALGAR
+          </h6>
+          <p class="text-slate-600 leading-normal font-light">
+            Descubre una tierra plagada de peligros, pero con grandes oportunidades para la exploración. Aventúrate en mundos subterráneos nunca vistos, repletos de maravillas ocultas y peligros al acecho. En el capítulo introductorio de la Saga del alma-mundo™, te aventurarás por las oscuras profundidades del imperio nerubiano, un lugar donde Xal'atath está reuniendo fuerzas malvadas con el propósito de destrozar Azeroth.
+          </p>
+        </div>
+        <div class="px-4 pb-4 pt-0 mt-2">
+          <button class="rounded-md bg-slate-800 py-2 px-4 border border-transparent text-center text-sm text-black transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" type="button">
+            Read more
+          </button>
+        </div>
+      </div>  
+
+      <div class="relative flex flex-col my-6 bg-white shadow-sm border border-slate-200 rounded-lg w-96">
+        <div class="relative h-56 m-2.5 overflow-hidden text-white rounded-md">
+          <img src="/img/m2.avif" alt="card-image" />
+        </div>
+        <div class="p-4">
+          <h6 class="mb-2 text-slate-800 text-xl font-semibold">
+            Isla de Dorn
+          </h6>
+          <p class="text-slate-600 leading-normal font-light">
+            Ubicada en la superficie de Khaz Algar, la Isla de Dorn es un paraíso exuberante repleto de vistas fantásticas, impresionantes cataratas y montañas majestuosas. También es el hogar ancestral de los terráneos forjados por los titanes, una raza fabricada a partir de piedra viva imbuida de la esencia del alma-mundo de Azeroth.
+          </p>
+        </div>
+        <div class="px-4 pb-4 pt-0 mt-2">
+          <button class="rounded-md bg-slate-800 py-2 px-4 border border-transparent text-center text-sm text-black transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" type="button">
+            Read more
+          </button>
+        </div>
+      </div>  
+
+      <div class="relative flex flex-col my-6 bg-white shadow-sm border border-slate-200 rounded-lg w-96">
+        <div class="relative h-56 m-2.5 overflow-hidden text-white rounded-md">
+          <img src="https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="card-image" />
+        </div>
+        <div class="p-4">
+          <h6 class="mb-2 text-slate-800 text-xl font-semibold">
+            Website Review Check
+          </h6>
+          <p class="text-slate-600 leading-normal font-light">
+            The place is close to Barceloneta Beach and bus stop just 2 min by walk
+            and near to &quot;Naviglio&quot; where you can enjoy the main night life in
+            Barcelona.
+          </p>
+        </div>
+        <div class="px-4 pb-4 pt-0 mt-2">
+          <button class="rounded-md bg-slate-800 py-2 px-4 border border-transparent text-center text-sm text-black transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" type="button">
+            Read more
+          </button>
+        </div>
+      </div>  
+
+      
+
+
+
+    </div>
+
+
+
+
+    <div>
+      <p class="block mb-4 text-3xl text-center text-slate-500 md:mb-0 border-t border-slate-200 mt-4 pt-4">
+        Ultimas Imagenes
+      </p>
+    </div>
+
+    <div>
+      <div class="mt-8 grid grid-cols-2 gap-4 md:grid-cols-4">
+        <div class="grid gap-4">
+          <div>
+            <img
+              class="h-auto max-w-full rounded-lg object-cover object-center"
+              src="https://images.unsplash.com/photo-1432462770865-65b70566d673?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1950&amp;q=80"
+              alt="gallery-photo"
+            />
+          </div>
+          <div>
+            <img
+              class="h-auto max-w-full rounded-lg object-cover object-center "
+              src="https://images.unsplash.com/photo-1629367494173-c78a56567877?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=927&amp;q=80"
+              alt="gallery-photo"
+            />
+          </div>
+          <div>
+            <img
+              class="h-auto max-w-full rounded-lg object-cover object-center"
+              src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2940&amp;q=80"
+              alt="gallery-photo"
+            />
+          </div>
+        </div>
+        <div class="grid gap-4">
+          <div>
+            <img
+              class="h-auto max-w-full rounded-lg object-cover object-center"
+              src="https://images.unsplash.com/photo-1552960562-daf630e9278b?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=687&amp;q=80"
+              alt="gallery-photo"
+            />
+          </div>
+          <div>
+            <img
+              class="h-auto max-w-full rounded-lg object-cover object-center"
+              src="https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=80"
+              alt="gallery-photo"
+            />
+          </div>
+          <div>
+            <img
+              class="h-auto max-w-full rounded-lg object-cover object-center "
+              src="https://docs.material-tailwind.com/img/team-3.jpg"
+              alt="gallery-photo"
+            />
+          </div>
+        </div>
+        <div class="grid gap-4">
+          <div>
+            <img
+              class="h-auto max-w-full rounded-lg object-cover object-center"
+              src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2940&amp;q=80"
+              alt="gallery-photo"
+            />
+          </div>
+          <div>
+            <img
+              class="h-auto max-w-full rounded-lg object-cover object-center "
+              src="https://docs.material-tailwind.com/img/team-3.jpg"
+              alt="gallery-photo"
+            />
+          </div>
+          <div>
+            <img
+              class="h-auto max-w-full rounded-lg object-cover object-center"
+              src="https://images.unsplash.com/photo-1552960562-daf630e9278b?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=687&amp;q=80"
+              alt="gallery-photo"
+            />
+          </div>
+        </div>
+        <div class="grid gap-4">
+          <div>
+            <img
+              class="h-auto max-w-full rounded-lg object-cover object-center"
+              src="https://images.unsplash.com/photo-1552960562-daf630e9278b?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=687&amp;q=80"
+              alt="gallery-photo"
+            />
+          </div>
+          <div>
+            <img
+              class="h-auto max-w-full rounded-lg object-cover object-center"
+              src="https://images.unsplash.com/photo-1629367494173-c78a56567877?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=927&amp;q=80"
+              alt="gallery-photo"
+            />
+          </div>
+        </div>
+      </div>
+
+    </div>
   </div>
-</header>
 
-<!-- Main Content Section -->
-<main>
-  <section class="hero">
-    <h1>Welcome to World of Warcraft</h1>
-    <p>Explore the vast world of Azeroth, complete quests, and battle against the Burning Legion.</p>
-    <button>Learn More</button>
-  </section>
-  <section class="game-info">
-    <h2>Game Information</h2>
-    <p>World of Warcraft is a massively multiplayer online role-playing game (MMORPG) developed by Blizzard Entertainment.</p>
-    <ul>
-      <li><a href="#">Story</a></li>
-      <li><a href="#">Gameplay Mechanics</a></li>
-      <li><a href="#">Features</a></li>
-    </ul>
-  </section>
-</main>
 
-<!-- Community Section -->
-<section class="community">
-  <h2>Community</h2>
-  <p>Join the World of Warcraft community and share your creations, participate in discussions, and connect with other players.</p>
-  <ul>
-    <li><a href="#">Fan Art</a></li>
-    <li><a href="#">Cosplay</a></li>
-    <li><a href="#">Fiction</a></li>
-  </ul>
-</section>
 
-<!-- Footer Section -->
-<footer>
-  <p>&copy; 2023 Blizzard Entertainment. All rights reserved.</p>
-  <ul>
-    <li><a href="#">Terms of Service</a></li>
-    <li><a href="#">Privacy Policy</a></li>
-  </ul>
-</footer>
-    
 </body>
+
+
+
+
+<footer class="w-4/5 m-auto bg-white p-8">
+
+
+  <p class="block mb-4 text-sm text-center text-slate-500 md:mb-0 border-t border-slate-200 mt-4 pt-4">
+
+  </p>
+
+  <div
+    class="flex flex-row flex-wrap items-center justify-center gap-y-6 gap-x-12 bg-white text-center md:justify-between">
+
+    <img
+      class="h-16 flex flex-row flex-wrap items-center justify-center gap-y-6 gap-x-12 bg-white text-center md:justify-between"
+      src="/img/logo.png" alt="">
+
+    <ul class="flex flex-wrap items-center gap-y-2 gap-x-8">
+      <li>
+        <a href="#" class="text-slate-700 hover:text-slate-500 focus:text-slate-500 text-sm">
+          About Us
+        </a>
+      </li>
+      <li>
+        <a href="#" class="text-slate-700 hover:text-slate-500 focus:text-slate-500 text-sm">
+          License
+        </a>
+      </li>
+      <li>
+        <a href="#" class="text-slate-700 hover:text-slate-500 focus:text-slate-500 text-sm">
+          Contribute
+        </a>
+      </li>
+      <li>
+        <a href="#" class="text-slate-700 hover:text-slate-500 focus:text-slate-500 text-sm">
+          Contact Us
+        </a>
+      </li>
+    </ul>
+  </div>
+  <p class="block mb-4 text-sm text-center text-slate-500 md:mb-0 border-t border-slate-200 mt-4 pt-4">
+
+  </p>
+
+</footer>
+
+
+
 <script src="https://unpkg.com/@material-tailwind/html@latest/scripts/script-name.js"></script>
 <script src="https://unpkg.com/@material-tailwind/html@latest/scripts/ripple.js"></script>
 
