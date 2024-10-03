@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>World of Warcraft</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #1b1b1b;
+        color: white;
+      }
+      header {
+        background-color: #000;
+        padding: 20px;
+        text-align: center;
+      }
+      header img {
+        width: 200px;
+      }
+      nav {
+        background-color: #333;
+        padding: 15px;
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+      }
+      nav a {
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+      }
+      nav a:hover {
+        text-decoration: underline;
+      }
+      .hero {
+        /* background-image: url(""); */
+        background-size: cover;
+        background-position: center;
+        height: 500px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+      .hero h1 {
+        font-size: 50px;
+        margin: 0;
+      }
+      .section {
+        padding: 40px;
+        text-align: center;
+      }
+      .section img {
+        width: 100%;
+        max-width: 400px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+      }
+      footer {
+        background-color: #000;
+        color: white;
+        text-align: center;
+        padding: 10px;
+        margin-top: 50px;
+      }
+      .banner {
+        position: relative;
+        height: 500px;
+      }
+
+      .banner-video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        overflow: hidden;
+        z-index: -1;
+      }
+
+      .banner-video video {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        min-width: 100%;
+        min-height: 100%;
+      }
+      .banner-video img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        min-width: 100%;
+        min-height: 100%;
+      }
+
+      .banner-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        z-index: 1;
+        color: #fff;
+      }
+
+      .banner-text h1 {
+        text-shadow: 1px 1px 1px;
+        font-size: 3rem;
+        margin-bottom: 20px;
+      }
+
+      .banner-text p {
+        font-size: 1.5rem;
+        margin-bottom: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/WoW_icon.svg/2048px-WoW_icon.svg.png"
+        alt="Logo World of Warcraft"
+      />
+    </header>
+
+    <nav>
+      <a href="#">Inicio</a>
+      <a href="#">Juega gratis</a>
+      <a href="#">Noticias</a>
+      <a href="#">Comunidad</a>
+      <a href="#">Tienda</a>
+    </nav>
+
+    <section class="banner">
+      <div class="banner-video">
+        <video autoplay loop muted>
+          <source src="video/main-page.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <div class="banner-text">
+        <h1>¡YA ESTÁ DISPONIBLE WORLD OF WARCRAFT: THE WAR WITHIN!</h1>
+        <p>
+          Vuelve a la lucha y defiende Azeroth frente a las sombras de lo
+          profundo. Viaja por inéditos mundos subterráneos, repletos de
+          maravillas ocultas y peligros al acecho, hasta las oscuras
+          profundidades del imperio nerubiano, donde la maliciosa Presagista del
+          Vacío está amasando fuerzas arácnidas para poner Azeroth de rodillas.
+        </p>
+      </div>
+    </section>
+
+    <section class="banner">
+      <div class="banner-video">
+        <img src="images/W2SZUAZPYRTJ1719950644897.webp" alt="Imagen banner" />
+      </div>
+      <div class="banner-text">
+        <h1>Disfrutad juntos de aventuras infinitas</h1>
+        <p>
+          Amplía tu colección con la nueva montura mensajero encantador (¡con
+          vuelo surcacielos!), la mascota búho Nevadín y un futuro llevo de
+          aventuras infinitas comprando una suscripción por 6 meses a World of
+          Warcraft®. Ya disponible en la tienda del juego o en la Tienda
+          Battle.net.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Últimas noticias</h2>
+      <img src="images/W2SZUAZPYRTJ1719950644897.webp" alt="Noticia 1" />
+      <p>La última actualización está disponible.</p>
+    </section>
+
+    <section class="section">
+      <h2>Únete a la batalla</h2>
+      <img src="https://example.com/join-battle.jpg" alt="Únete a la batalla" />
+      <p>Descubre el nuevo contenido y prepárate para la guerra.</p>
+    </section>
+
+    <footer>
+      <p>&copy; 2024 Blizzard Entertainment. Todos los derechos reservados.</p>
+      <a href="https://www.blizzard.com/es-MX/legal/terms-of-use"
+        >Términos y condiciones</a
+      >
+      <a href="https://www.blizzard.com/es-MX/legal/privacy-policy"
+        >Política de privacidad</a
+      >
+      <a href="https://www.blizzard.com/es-MX/legal/cookie-policy"
+        >Política de cookies</a
+      >
+      <a href="https://www.blizzard.com/es-MX/legal/imprint"
+        >Información legal</a
+      >
+      <a href="https://www.blizzard.com/es-MX/legal/contact">Contáctanos</a>
+    </footer>
+  </body>
+</html>
