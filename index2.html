@@ -1,202 +1,184 @@
 <!DOCTYPE html>
-<html lang="es">
-  <head>
+<html lang="es" class="bg-gray-900 text-white">
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>World of Warcraft</title>
+    <title>Guardianes de Azeroth - Guild de World of Warcraft</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-      body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #1b1b1b;
-        color: white;
-      }
-      header {
-        background-color: #000;
-        padding: 20px;
-        text-align: center;
-      }
-      header img {
-        width: 200px;
-      }
-      nav {
-        background-color: #333;
-        padding: 15px;
-        display: flex;
-        justify-content: center;
-        gap: 30px;
-      }
-      nav a {
-        color: white;
-        text-decoration: none;
-        font-size: 18px;
-      }
-      nav a:hover {
-        text-decoration: underline;
-      }
-      .hero {
-        /* background-image: url(""); */
-        background-size: cover;
-        background-position: center;
-        height: 500px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-      }
-      .hero h1 {
-        font-size: 50px;
-        margin: 0;
-      }
-      .section {
-        padding: 40px;
-        text-align: center;
-      }
-      .section img {
-        width: 100%;
-        max-width: 400px;
-        border-radius: 10px;
-        margin-bottom: 20px;
-      }
-      footer {
-        background-color: #000;
-        color: white;
-        text-align: center;
-        padding: 10px;
-        margin-top: 50px;
-      }
-      .banner {
-        position: relative;
-        height: 500px;
-      }
-
-      .banner-video {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        overflow: hidden;
-        z-index: -1;
-      }
-
-      .banner-video video {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        min-width: 100%;
-        min-height: 100%;
-      }
-      .banner-video img {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        min-width: 100%;
-        min-height: 100%;
-      }
-
-      .banner-text {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        text-align: center;
-        z-index: 1;
-        color: #fff;
-      }
-
-      .banner-text h1 {
-        text-shadow: 1px 1px 1px;
-        font-size: 3rem;
-        margin-bottom: 20px;
-      }
-
-      .banner-text p {
-        font-size: 1.5rem;
-        margin-bottom: 30px;
-      }
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap');
     </style>
-  </head>
-  <body>
-    <header>
-      <img
-        src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/WoW_icon.svg/2048px-WoW_icon.svg.png"
-        alt="Logo World of Warcraft"
-      />
+</head>
+<body class="font-sans">
+    <header class="bg-black p-5 text-center">
+        <img src="/assets/img/logo.png"
+            alt="Logo World of Warcraft"
+            class="max-w-56 mx-auto mb-4"
+        />
+        <h1 class="text-4xl font-bold font-['Cinzel'] text-yellow-500">Guardianes de Azeroth</h1>
     </header>
 
-    <nav>
-      <a href="#">Inicio</a>
-      <a href="#">Juega gratis</a>
-      <a href="#">Noticias</a>
-      <a href="#">Comunidad</a>
-      <a href="#">Tienda</a>
+    <nav class="bg-gray-800 p-4 flex justify-center space-x-8">
+        <a href="#" class="text-lg hover:underline">Inicio</a>
+        <a href="#" class="text-lg hover:underline">Sobre Nosotros</a>
+        <a href="#" class="text-lg hover:underline">Roster</a>
+        <a href="#" class="text-lg hover:underline">Eventos</a>
+        <a href="#" class="text-lg hover:underline">Reclutamiento</a>
     </nav>
 
-    <section class="banner">
-      <div class="banner-video">
-        <video autoplay loop muted>
-          <source src="video/main-page.mp4" type="video/mp4" />
-        </video>
+    <section class="relative h-[500px]">
+        <div class="absolute inset-0 overflow-hidden">
+          <video src="/assets/video/main-page.mp4"
+              alt="Banner de la Guild"
+              class="w-full h-full object-cover"
+              autoplay muted loop playsinline
+          ></video>
+            
+        </div>
+        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center text-center">
+            <div class="max-w-4xl px-4">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 text-shadow font-['Cinzel']">
+                    Bienvenidos a la Hermandad CLOUD
+                </h2>
+                <p class="text-lg md:text-xl mb-8">
+                    Somos una guild dedicada al progreso en raids míticas y PvE de alto nivel. Únete a nosotros en nuestra búsqueda de la gloria en Azeroth.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 px-4">
+        <h2 class="text-3xl font-bold mb-8 text-center font-['Cinzel'] text-yellow-500">Nuestro Roster</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            <div class="bg-gray-800 rounded-lg p-4 shadow-lg">
+                <img src="/assets/img/profile1.jpg" alt="Thralldor" class="w-24 h-24 rounded-full mx-auto mb-4"/>
+                <h3 class="text-xl font-bold text-center mb-2">Thralldor</h3>
+                <p class="text-center text-gray-400">Tanque - Guerrero</p>
+                <p class="text-center">Nivel 60 - iLvl 415</p>
+            </div>
+            <div class="bg-gray-800 rounded-lg p-4 shadow-lg">
+                <img src="/assets/img/profile2.jpg" alt="Sylvanas" class="w-24 h-24 rounded-full mx-auto mb-4"/>
+                <h3 class="text-xl font-bold text-center mb-2">Sylvanas</h3>
+                <p class="text-center text-gray-400">DPS - Cazadora</p>
+                <p class="text-center">Nivel 60 - iLvl 412</p>
+            </div>
+            <div class="bg-gray-800 rounded-lg p-4 shadow-lg">
+                <img src="/assets/img/profile3.jpg" alt="Anduin" class="w-24 h-24 rounded-full mx-auto mb-4"/>
+                <h3 class="text-xl font-bold text-center mb-2">Anduin</h3>
+                <p class="text-center text-gray-400">Sanador - Sacerdote</p>
+                <p class="text-center">Nivel 60 - iLvl 410</p>
+            </div>
+            
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto mt-6">
+            <div class="bg-gray-800 rounded-lg p-4 shadow-lg">
+                <img src="/assets/img/profile4.jpg" alt="Thralldor" class="w-24 h-24 rounded-full mx-auto mb-4"/>
+                <h3 class="text-xl font-bold text-center mb-2">Thralldor</h3>
+                <p class="text-center text-gray-400">Tanque - Guerrero</p>
+                <p class="text-center">Nivel 60 - iLvl 415</p>
+            </div>
+            <div class="bg-gray-800 rounded-lg p-4 shadow-lg">
+                <img src="/assets/img/profile5.jpg" alt="Sylvanas" class="w-24 h-24 rounded-full mx-auto mb-4"/>
+                <h3 class="text-xl font-bold text-center mb-2">Sylvanas</h3>
+                <p class="text-center text-gray-400">DPS - Cazadora</p>
+                <p class="text-center">Nivel 60 - iLvl 412</p>
+            </div>
+            <div class="bg-gray-800 rounded-lg p-4 shadow-lg">
+                <img src="/assets/img/profile6.jpg" alt="Anduin" class="w-24 h-24 rounded-full mx-auto mb-4"/>
+                <h3 class="text-xl font-bold text-center mb-2">Anduin</h3>
+                <p class="text-center text-gray-400">Sanador - Sacerdote</p>
+                <p class="text-center">Nivel 60 - iLvl 410</p>
+            </div>
+            
+        </div>
+        
+    </section>
+
+    <section class="py-16 px-4 bg-gray-800">
+      
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-8 font-['Cinzel'] text-yellow-500">Próximos Eventos</h2>
+            <div class="bg-gray-700 rounded-lg p-6 mb-6">
+                <h3 class="text-xl font-bold mb-2">Raid Mítica: Castillo de Nathria</h3>
+                <p class="mb-4">Jueves, 20:00 hora del servidor</p>
+                <a href="#" class="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-2 px-4 rounded">Apuntarse</a>
+            </div>
+            <div class="bg-gray-700 rounded-lg p-6">
+                <h3 class="text-xl font-bold mb-2">PvP: Arena 3v3</h3>
+                <p class="mb-4">Sábado, 18:00 hora del servidor</p>
+                <a href="#" class="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-2 px-4 rounded">Apuntarse</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="relative h-[500px]">
+      <div class="absolute inset-0 overflow-hidden">
+        <img src="/assets/img/W2SZUAZPYRTJ1719950644897.webp" 
+        alt="Banner de la Guild"
+        class="w-full h-full object-cover"
+    />
       </div>
-      <div class="banner-text">
-        <h1>¡YA ESTÁ DISPONIBLE WORLD OF WARCRAFT: THE WAR WITHIN!</h1>
-        <p>
-          Vuelve a la lucha y defiende Azeroth frente a las sombras de lo
-          profundo. Viaja por inéditos mundos subterráneos, repletos de
-          maravillas ocultas y peligros al acecho, hasta las oscuras
-          profundidades del imperio nerubiano, donde la maliciosa Presagista del
-          Vacío está amasando fuerzas arácnidas para poner Azeroth de rodillas.
+      <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center text-center">
+          <div class="max-w-4xl px-4">
+              <h2 class="text-3xl font-bold mb-8 font-['Cinzel'] text-yellow-500">Próximos Eventos</h2>
+              <div class="bg-gray-700 rounded-lg p-6 mb-6">
+                  <h3 class="text-xl font-bold mb-2">Raid Mítica: Castillo de Nathria</h3>
+                  <p class="mb-4">Jueves, 20:00 hora del servidor</p>
+                  <a href="#" class="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-2 px-4 rounded">Apuntarse</a>
+              </div>
+              <div class="bg-gray-700 rounded-lg p-6">
+                  <h3 class="text-xl font-bold mb-2">PvP: Arena 3v3</h3>
+                  <p class="mb-4">Sábado, 18:00 hora del servidor</p>
+                  <a href="#" class="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-2 px-4 rounded">Apuntarse</a>
+              </div>
+          </div>
+      </div>
+  </section>
+  
+
+    <section class="py-16 px-4 text-center">
+        <h2 class="text-3xl font-bold mb-8 font-['Cinzel'] text-yellow-500">Únete a Nosotros</h2>
+        <p class="text-lg mb-8 max-w-2xl mx-auto">
+            ¿Buscas una guild comprometida con el progreso y la camaradería? ¡Estamos reclutando! Buscamos jugadores activos y dedicados para nuestro equipo principal de raids y PvP.
         </p>
-      </div>
+        <a href="#" class="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-3 px-6 rounded-lg text-lg">Solicitar Ingreso</a>
     </section>
 
-    <section class="banner">
-      <div class="banner-video">
-        <img src="images/W2SZUAZPYRTJ1719950644897.webp" alt="Imagen banner" />
-      </div>
-      <div class="banner-text">
-        <h1>Disfrutad juntos de aventuras infinitas</h1>
-        <p>
-          Amplía tu colección con la nueva montura mensajero encantador (¡con
-          vuelo surcacielos!), la mascota búho Nevadín y un futuro llevo de
-          aventuras infinitas comprando una suscripción por 6 meses a World of
-          Warcraft®. Ya disponible en la tienda del juego o en la Tienda
-          Battle.net.
-        </p>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2>Últimas noticias</h2>
-      <img src="images/W2SZUAZPYRTJ1719950644897.webp" alt="Noticia 1" />
-      <p>La última actualización está disponible.</p>
-    </section>
-
-    <section class="section">
-      <h2>Únete a la batalla</h2>
-      <img src="https://example.com/join-battle.jpg" alt="Únete a la batalla" />
-      <p>Descubre el nuevo contenido y prepárate para la guerra.</p>
-    </section>
-
-    <footer>
-      <p>&copy; 2024 Blizzard Entertainment. Todos los derechos reservados.</p>
-      <a href="https://www.blizzard.com/es-MX/legal/terms-of-use"
-        >Términos y condiciones</a
-      >
-      <a href="https://www.blizzard.com/es-MX/legal/privacy-policy"
-        >Política de privacidad</a
-      >
-      <a href="https://www.blizzard.com/es-MX/legal/cookie-policy"
-        >Política de cookies</a
-      >
-      <a href="https://www.blizzard.com/es-MX/legal/imprint"
-        >Información legal</a
-      >
-      <a href="https://www.blizzard.com/es-MX/legal/contact">Contáctanos</a>
+    <footer class="bg-black text-center py-8 px-4">
+        <p class="mb-4">&copy; 2024 CLOUD-GUILD. Todos los derechos reservados.</p>
+        <div class="flex flex-wrap justify-center gap-4">
+            <a href="#" class="hover:underline">CLOUD</a>
+            <a href="#" class="hover:underline">Política de Loot</a>
+            <a href="#" class="hover:underline">Contacto</a>
+        </div>
     </footer>
-  </body>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'cinzel': ['Cinzel', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+<script>
+  document.addEventListener("scroll", function() {
+      const video = document.getElementById("background-video");
+      const rect = video.getBoundingClientRect();
+      
+      // Check if the video is in the viewport
+      if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
+          if (video.paused) {
+              video.play();  // Play the video if it's paused and visible
+          }
+      } else {
+          video.pause();  // Pause the video if it's outside the viewport
+      }
+  });
+</script>
 </html>
