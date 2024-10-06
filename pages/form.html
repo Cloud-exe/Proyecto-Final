@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Solicitud de Ingreso - Guardianes de Azeroth</title>
+    <title>Solicitud de Ingreso - CLOUD</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Open+Sans:wght@400;600&display=swap');
@@ -14,31 +14,47 @@
 <body class="font-['Open_Sans'] bg-gray-900 text-white">
     <nav class="flex justify-between relative h-[180px]">
         <div class="absolute inset-0 overflow-hidden z-0 bg-gradient-to-l from-transparent to-gray-800 via-transparent">
-            <img src="/assets/img/principalbanner.png" 
-                 alt="Banner de la Guild"
-                 class="object-none absolute right-0"
-            />
+            <img src="/assets/img/principalbanner.png" alt="Banner de la Guild" class="object-none absolute right-0" />
         </div>
         <div class="flex justify-start space-x-8 relative z-10">
-            <img src="/assets/img/logo.png"
-                 alt="Logo World of Warcraft"
-                 class="max-w-36 mx-auto mb-4"
-            />
+            <a href="/index.html"><img src="/assets/img/logo.png" alt="Logo World of Warcraft" class="max-w-36 mx-auto mb-4" /></a>
+            
         </div>
         <div class="p-4 flex items-center space-x-8 relative z-10 text-yellow-500">
             <a href="/index.html" class="text-2xl font-bold hover:underline hover:text-yellow-500">Inicio</a>
             <a href="/pages/news.html" class="text-2xl font-bold hover:underline hover:text-yellow-500">Noticias</a>
             <a href="/pages/normas.html" class="text-2xl font-bold hover:underline hover:text-yellow-500">Normas</a>
             <a href="/pages/loot.html" class="text-2xl font-bold hover:underline hover:text-yellow-500">Loot</a>
-            <a href="/pages/form.html" class="text-2xl font-bold hover:underline hover:text-yellow-500">Reclutamiento</a>
-            <a href="/pages/login.html" class="text-lg font-bold hover:underline hover:text-yellow-500">
-                <button class="bg-yellow-600 hover:bg-yellow-700 text-gray-900 font-bold py-2 px-4 rounded-lg border-4 border-yellow-900 shadow-lg transform hover:scale-105 transition-transform duration-200">
+            <a href="/pages/form.html"
+                class="text-2xl font-bold hover:underline hover:text-yellow-500">Reclutamiento</a>
+            <a id="userLog" href="/pages/login.html" class="text-lg font-bold hover:underline hover:text-yellow-500">
+                <button
+                    class="bg-yellow-600 hover:bg-yellow-700 text-gray-900 font-bold py-2 px-4 rounded-lg border-4 border-yellow-900 shadow-lg transform hover:scale-105 transition-transform duration-200">
                     Iniciar Sesión
                 </button>
             </a>
+            <div class="relative ml-3">
+                <div>
+                    <button type="button"
+                        class="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                        id="user-menu-button" aria-expanded="false" aria-haspopup="true">
+                        <span class="absolute -inset-1.5"></span>
+                        <span class="sr-only">Open user menu</span>
+                        <img class="h-12 w-12 rounded-full" src="/assets/img/profile4.jpg" alt="">
+                    </button>
+                </div>
+                <div class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none hidden"
+                    role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1"
+                    id="dropdown-menu">
+                    <a href="/pages/profile.html" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
+                        id="user-menu-item-0">Perfil</a>
+                    
+                    <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
+                        id="user-menu-item-2">Cerrar Sesión</a>
+                     
+                </div>
+            </div>
         </div>
-        
-        
     </nav>
 
     <main class="container mx-auto px-4 py-8 mt-8">
@@ -56,18 +72,18 @@
                 <select id="class" name="class" required
                     class="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-yellow-500">
                     <option value="">Selecciona una clase</option>
-                    <option value="warrior">Guerrero</option>
+                    <option value="guerrero">Guerrero</option>
                     <option value="paladin">Paladín</option>
-                    <option value="hunter">Cazador</option>
-                    <option value="rogue">Pícaro</option>
-                    <option value="priest">Sacerdote</option>
-                    <option value="shaman">Chamán</option>
-                    <option value="mage">Mago</option>
-                    <option value="warlock">Brujo</option>
-                    <option value="monk">Monje</option>
-                    <option value="druid">Druida</option>
-                    <option value="demon-hunter">Cazador de Demonios</option>
-                    <option value="death-knight">Caballero de la Muerte</option>
+                    <option value="cazador">Cazador</option>
+                    <option value="picaro">Pícaro</option>
+                    <option value="sacerdote">Sacerdote</option>
+                    <option value="chaman">Chamán</option>
+                    <option value="mago">Mago</option>
+                    <option value="brujo">Brujo</option>
+                    <option value="monje">Monje</option>
+                    <option value="druida">Druida</option>
+                    <option value="cazador de demonios">Cazador de Demonios</option>
+                    <option value="caballero de la muerte">Caballero de la Muerte</option>
                 </select>
             </div>
 
@@ -120,10 +136,46 @@
     <footer class="bg-black text-center py-8 px-4 mt-8">
         <p class="mb-4">&copy; 2024 CLOUD. Todos los derechos reservados.</p>
         <div class="flex flex-wrap justify-center gap-4">
-            <a href="#" class="hover:underline">Normas de la Guild</a>
-            <a href="#" class="hover:underline">Política de Loot</a>
-            <a href="#" class="hover:underline">Contacto</a>
+            <a href="/pages/normas.html" class="hover:underline">Normas de la Guild</a>
+            <a href="/pages/news.html" class="hover:underline">Noticias</a>
+            <a href="/pages/loot.html" class="hover:underline">Politicas de Loot</a>
         </div>
     </footer>
 </body>
+<script>
+    document.querySelector('form').addEventListener('submit', async (event) => {
+        event.preventDefault(); 
+        const formData = {
+            nombrePersonaje: document.getElementById('character-name').value,
+            clase: document.getElementById('class').value,
+            especializacion: document.getElementById('spec').value,
+            nivelObjeto: parseInt(document.getElementById('item-level').value),
+            experiencia: document.getElementById('experience').value,
+            disponibilidad: document.getElementById('availability').value,
+            razonUnirse: document.getElementById('reason').value,
+        };
+
+        try {
+            const response = await fetch(`${CONFIG.API_URL}/solicitudes`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
+
+            if (response.ok) {
+                const result = await response.json();
+                alert('Solicitud enviada con éxito: ' + result.characterName);
+                document.querySelector('form').reset();
+            } else {
+                alert('Error al enviar la solicitud');
+            }
+        } catch (error) {
+            console.error('Error en la solicitud:', error);
+            alert('Error en la solicitud');
+        }
+    });
+</script>
+
 </html>

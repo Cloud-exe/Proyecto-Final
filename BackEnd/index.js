@@ -2,6 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const sequelize = require('./config/config');
 const Usuario = require('./models/Usuario');
+const SolicitudIngreso = require('./models/SolicitudIngreso');
 const cors = require("cors");
 
 const app = express();
@@ -69,6 +70,84 @@ app.post('/login', async (req, res) => {
     }
 });
 
+
+
+// Endpoint para editar un usuario
+app.post('/guardarPerfil', async (req, res) => {
+    const { nombre, email, clase, nombrePersonaje, rol, password } = req.body;
+
+    try {
+        const usuario = await Usuario.findOne({ where: { email } });
+
+        if (!usuario) {
+            return res.status(404).json({ success: false, message: 'Usuario no encontrado' });
+        }
+
+        if (nombrePersonaje !== undefined) {
+            usuario.nombrePersonaje = nombrePersonaje;
+        }
+
+        if (nombre !== undefined) {
+            usuario.nombre = nombre;
+        }
+        if (clase !== undefined) {
+            usuario.clase = clase;
+        }
+        if (rol !== undefined) {
+            usuario.rol = rol;
+        }
+
+        if (password) {
+            const hashPassword = await bcrypt.hash(password, 10); 
+            usuario.password = hashPassword;
+        }
+
+        await usuario.save();
+
+        return res.json({ success: true, message: 'Usuario actualizado exitosamente' });
+    } catch (error) {
+        console.error('Error al actualizar el usuario:', error);
+        return res.status(500).json({ success: false, message: 'Error en el servidor' });
+    }
+});
+
+// Ruta para guardar una nueva solicitud de ingreso
+app.post('/solicitudes', async (req, res) => {
+    try {
+        const {
+            nombrePersonaje,
+            clase,
+            especializacion,
+            nivelObjeto,
+            experiencia,
+            disponibilidad,
+            razonUnirse,
+            aceptaTerminos,
+        } = req.body;
+
+        const nuevaSolicitud = await SolicitudIngreso.create({
+            nombrePersonaje,
+            clase,
+            especializacion,
+            nivelObjeto,
+            experiencia,
+            disponibilidad,
+            razonUnirse,
+            aceptaTerminos,
+        });
+
+        res.status(201).json({
+            message: 'Solicitud de ingreso guardada correctamente.',
+            solicitud: nuevaSolicitud,
+        });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({
+            message: 'Error al guardar la solicitud de ingreso.',
+            error: error.message,
+        });
+    }
+});
 
 // Sincronizar la base de datos y arrancar el servidor
 const startServer = async () => {

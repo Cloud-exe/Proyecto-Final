@@ -1,3 +1,11 @@
+document.addEventListener('DOMContentLoaded', function() {
+    const usuario = localStorage.getItem('usuario');
+    
+    if (usuario) {
+        window.location.href = '/index.html';
+    }
+});
+
 document.getElementById('loginForm').addEventListener('submit', async (event) => {
     event.preventDefault(); 
     const email = document.getElementById('email').value;
@@ -14,15 +22,17 @@ document.getElementById('loginForm').addEventListener('submit', async (event) =>
 
         if (response.ok) {
             const usuario = await response.json();
-            alert(usuario.mensaje); // Mensaje de éxito
-            localStorage.setItem('usuario', JSON.stringify(usuario)); // Guarda la información del usuario en localStorage
-            window.location.href = '/index.html'; // Redirige al índice
+            alert(usuario.mensaje);
+            localStorage.setItem('usuario', JSON.stringify(usuario));
+            window.location.href = '/index.html'; 
         } else {
             const error = await response.json();
-            alert('Error: ' + error.error); // Muestra el mensaje de error
+            alert('Error: ' + error.error);
         }
     } catch (error) {
         console.error('Error al iniciar sesión:', error);
         alert('Error en el servidor. Por favor, intenta de nuevo.');
     }
 });
+
+
