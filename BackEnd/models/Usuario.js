@@ -1,25 +1,39 @@
 const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/config'); // Ajusta la ruta si es necesario
+const sequelize = require('../config/config');
 
 class Usuario extends Model {}
 
-// Define el modelo
 Usuario.init({
     nombre: {
         type: DataTypes.STRING,
-        allowNull: false, // Asegúrate de que este campo sea obligatorio
+        allowNull: false,
     },
     email: {
         type: DataTypes.STRING,
-        allowNull: false, // Asegúrate de que este campo sea obligatorio
-        unique: true, // Evitar correos duplicados
+        allowNull: false,
+        unique: true,
     },
+    clase: {
+        type: DataTypes.ENUM('Guerrero', 'Paladín', 'Sacerdote'),
+        allowNull: false,
+    },
+    nombrePersonaje: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
+    rol: {
+        type: DataTypes.ENUM('DPS', 'Tanque', 'Healer'),
+        allowNull: false,
+    },
+    password: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    }
 }, {
-    sequelize, // La instancia de sequelize
-    modelName: 'Usuario', // Nombre del modelo
-    tableName: 'usuarios', // Nombre de la tabla en la base de datos
-    timestamps: true, // Si quieres usar createdAt y updatedAt
+    sequelize,
+    modelName: 'Usuario',
+    tableName: 'usuarios',
+    timestamps: true,
 });
 
-// Exportar el modelo
 module.exports = Usuario;

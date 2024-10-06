@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Iniciar Sesión - World of Warcraft</title>
+    <title>Registrar Usuario - World of Warcraft</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap');
@@ -11,33 +11,61 @@
 </head>
 <body class="font-sans min-h-screen flex items-center justify-center bg-cover bg-center" style="background-image: url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/wow-background-Wd0Ue9Yl9Ht5Ue5Ue9Yl9Ht5Ue.jpg');">
     <div class="w-full max-w-md">
-        <form class="bg-black bg-opacity-80 shadow-md rounded-lg px-8 pt-6 pb-8 mb-4 border border-yellow-500">
+        <form id="registerForm" class="bg-black bg-opacity-80 shadow-md rounded-lg px-8 pt-6 pb-8 mb-4 border border-yellow-500">
             <div class="mb-6 text-center">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/WoW_icon.svg/2048px-WoW_icon.svg.png" alt="World of Warcraft Logo" class="w-24 mx-auto mb-4">
-                <h2 class="text-3xl font-bold font-cinzel text-yellow-500">Iniciar Sesión</h2>
+                <h2 class="text-3xl font-bold font-cinzel text-yellow-500">Registrar Usuario</h2>
             </div>
             <div class="mb-4">
-                <label class="block text-yellow-500 text-sm font-bold mb-2" for="username">
-                    Nombre de usuario o email
+                <label class="block text-yellow-500 text-sm font-bold mb-2" for="nombre">
+                    Nombre
                 </label>
-                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-gray-200" id="username" type="text" placeholder="Tu email o Usuario">
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-gray-200" id="nombre" type="text" placeholder="Tu nombre" required>
             </div>
-            <div class="mb-6">
-                <label class="block text-yellow-500 text-sm font-bold mb-2" for="password">
-                    Contraseña
+            <div class="mb-4">
+                <label class="block text-yellow-500 text-sm font-bold mb-2" for="email">
+                    Email
                 </label>
-                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline bg-gray-200" id="password" type="password" placeholder="••••••••">
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-gray-200" id="email" type="email" placeholder="Tu email" required>
+            </div>
+            <div class="mb-4">
+                <label class="block text-yellow-500 text-sm font-bold mb-2" for="clase">
+                    Clase
+                </label>
+                <select id="clase" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-gray-200" required>
+                    <option value="" disabled selected>Selecciona tu clase</option>
+                    <option value="Guerrero">Guerrero</option>
+                    <option value="Paladín">Paladín</option>
+                    <option value="Sacerdote">Sacerdote</option>
+                </select>
+            </div>
+            <div class="mb-4">
+                <label class="block text-yellow-500 text-sm font-bold mb-2" for="nombrePersonaje">
+                    Nombre del Personaje
+                </label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-gray-200" id="nombrePersonaje" type="text" placeholder="Nombre de tu personaje" required>
+            </div>
+            <div class="mb-4">
+                <label class="block text-yellow-500 text-sm font-bold mb-2" for="rol">
+                    Rol
+                </label>
+                <select id="rol" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-gray-200" required>
+                    <option value="" disabled selected>Selecciona tu rol</option>
+                    <option value="DPS">DPS</option>
+                    <option value="Tanque">Tanque</option>
+                    <option value="Healer">Healer</option>
+                </select>
+            </div>
+            <div class="mb-4">
+                <label class="block text-yellow-500 text-sm font-bold mb-2" for="password">
+                    Escribe una contraseña
+                </label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-gray-200" id="password" type="password" placeholder="Contraseña" required>
             </div>
             <div class="flex items-center justify-between">
-                <button class="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition duration-300 ease-in-out transform hover:scale-105" type="button">
+                <button id="submitButton" class="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition duration-300 ease-in-out transform hover:scale-105" type="submit">
                     Registrarse en el Reino
                 </button>
-                <a class="ml-3 inline-block align-baseline font-bold text-sm text-yellow-500 hover:text-yellow-400" href="#">
-                    ¿Olvidaste tu contraseña?
-                </a>
-                <a class="inline-block align-baseline font-bold text-sm text-yellow-500 hover:text-yellow-400" href="#"></a>
-                    ¿Ya tienes Cuenta?
-                </a>
             </div>
         </form>
         <p class="text-center text-gray-300 text-xs">
@@ -45,6 +73,7 @@
         </p>
     </div>
     <script>
+        // Configuración de Tailwind
         tailwind.config = {
             theme: {
                 extend: {
@@ -53,7 +82,43 @@
                     }
                 }
             }
-        }
+        };
+
+        // Manejo del envío del formulario
+        document.getElementById('registerForm').addEventListener('submit', async (event) => {
+            event.preventDefault(); // Evitar el envío normal del formulario
+
+            const nombre = document.getElementById('nombre').value;
+            const email = document.getElementById('email').value;
+            const clase = document.getElementById('clase').value;
+            const nombrePersonaje = document.getElementById('nombrePersonaje').value;
+            const rol = document.getElementById('rol').value;
+            const password = document.getElementById('password').value;
+
+
+            try {
+                const response = await fetch('http://localhost:3000/usuarios', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ nombre, email, clase, nombrePersonaje, rol }),
+                });
+
+                if (response.ok) {
+                    const nuevoUsuario = await response.json();
+                    alert('Usuario creado: ' + JSON.stringify(nuevoUsuario));
+                    // Aquí podrías redirigir al usuario a otra página o limpiar el formulario
+                    document.getElementById('registerForm').reset();
+                } else {
+                    const error = await response.json();
+                    alert('Error: ' + error.error);
+                }
+            } catch (error) {
+                console.error('Error al crear el usuario:', error);
+                alert('Error al crear el usuario. Por favor, intenta de nuevo.');
+            }
+        });
     </script>
 </body>
 </html>

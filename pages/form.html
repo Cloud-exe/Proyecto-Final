@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es" class="bg-gray-900 text-white">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Solicitud de Ingreso - Guardianes de Azeroth</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Open+Sans:wght@400;600&display=swap');
+    </style>
+</head>
+<body class="font-['Open_Sans'] bg-gray-900 text-white">
+    <nav class="flex justify-between relative h-[180px]">
+        <div class="absolute inset-0 overflow-hidden z-0 bg-gradient-to-l from-transparent to-gray-800 via-transparent">
+            <img src="/assets/img/principalbanner.png" 
+                 alt="Banner de la Guild"
+                 class="object-none absolute right-0"
+            />
+        </div>
+        <div class="flex justify-start space-x-8 relative z-10">
+            <img src="/assets/img/logo.png"
+                 alt="Logo World of Warcraft"
+                 class="max-w-36 mx-auto mb-4"
+            />
+        </div>
+        <div class="p-4 flex items-center space-x-8 relative z-10">
+            <a href="#" class="text-lg hover:underline">Inicio</a>
+            <a href="#" class="text-lg hover:underline">Sobre Nosotros</a>
+            <a href="#" class="text-lg hover:underline">Roster</a>
+            <a href="#" class="text-lg hover:underline">Eventos</a>
+            <a href="#" class="text-lg hover:underline">Reclutamiento</a>
+            <button class="bg-yellow-600 hover:bg-yellow-700 text-gray-900 font-bold py-2 px-4 rounded-lg border-4 border-yellow-900 shadow-lg transform hover:scale-105 transition-transform duration-200">
+                Iniciar Sesión
+            </button>
+        </div>
+    </nav>
+
+    <main class="container mx-auto px-4 py-8 mt-8">
+        <h2 class="text-3xl font-bold mb-8 text-center font-['Cinzel'] text-yellow-500">Solicitud de Ingreso</h2>
+        
+        <form class="max-w-2xl mx-auto bg-gray-800 p-8 rounded-lg shadow-lg">
+            <div class="mb-6">
+                <label for="character-name" class="block text-sm font-medium text-gray-300 mb-2">Nombre del Personaje</label>
+                <input type="text" id="character-name" name="character-name" required
+                    class="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-yellow-500">
+            </div>
+
+            <div class="mb-6">
+                <label for="class" class="block text-sm font-medium text-gray-300 mb-2">Clase</label>
+                <select id="class" name="class" required
+                    class="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-yellow-500">
+                    <option value="">Selecciona una clase</option>
+                    <option value="warrior">Guerrero</option>
+                    <option value="paladin">Paladín</option>
+                    <option value="hunter">Cazador</option>
+                    <option value="rogue">Pícaro</option>
+                    <option value="priest">Sacerdote</option>
+                    <option value="shaman">Chamán</option>
+                    <option value="mage">Mago</option>
+                    <option value="warlock">Brujo</option>
+                    <option value="monk">Monje</option>
+                    <option value="druid">Druida</option>
+                    <option value="demon-hunter">Cazador de Demonios</option>
+                    <option value="death-knight">Caballero de la Muerte</option>
+                </select>
+            </div>
+
+            <div class="mb-6">
+                <label for="spec" class="block text-sm font-medium text-gray-300 mb-2">Especialización</label>
+                <input type="text" id="spec" name="spec" required
+                    class="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-yellow-500">
+            </div>
+
+            <div class="mb-6">
+                <label for="item-level" class="block text-sm font-medium text-gray-300 mb-2">Nivel de Objeto</label>
+                <input type="number" id="item-level" name="item-level" required min="1" max="500"
+                    class="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-yellow-500">
+            </div>
+
+            <div class="mb-6">
+                <label for="experience" class="block text-sm font-medium text-gray-300 mb-2">Experiencia en Raids/PvP</label>
+                <textarea id="experience" name="experience" rows="4" required
+                    class="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-yellow-500"></textarea>
+            </div>
+
+            <div class="mb-6">
+                <label for="availability" class="block text-sm font-medium text-gray-300 mb-2">Disponibilidad</label>
+                <input type="text" id="availability" name="availability" required
+                    class="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-yellow-500">
+            </div>
+
+            <div class="mb-6">
+                <label for="reason" class="block text-sm font-medium text-gray-300 mb-2">¿Por qué quieres unirte a CLOUD?</label>
+                <textarea id="reason" name="reason" rows="4" required
+                    class="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-yellow-500"></textarea>
+            </div>
+
+            <div class="flex items-center mb-6">
+                <input type="checkbox" id="terms" name="terms" required
+                    class="w-4 h-4 text-yellow-500 bg-gray-700 border-gray-600 rounded focus:ring-yellow-500">
+                <label for="terms" class="ml-2 text-sm text-gray-300">
+                    Acepto las normas de la guild y entiendo que esta solicitud no garantiza mi ingreso.
+                </label>
+            </div>
+
+            <div class="text-center">
+                <button type="submit" class="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-2 px-4 rounded-lg transition duration-300">
+                    Enviar Solicitud
+                </button>
+            </div>
+        </form>
+    </main>
+
+    <footer class="bg-black text-center py-8 px-4 mt-8">
+        <p class="mb-4">&copy; 2024 CLOUD. Todos los derechos reservados.</p>
+        <div class="flex flex-wrap justify-center gap-4">
+            <a href="#" class="hover:underline">Normas de la Guild</a>
+            <a href="#" class="hover:underline">Política de Loot</a>
+            <a href="#" class="hover:underline">Contacto</a>
+        </div>
+    </footer>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'cinzel': ['Cinzel', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>

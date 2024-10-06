@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es" class="bg-gray-900 text-white">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Política de Loot - Guardianes de Azeroth</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Open+Sans:wght@400;600&display=swap');
+    </style>
+</head>
+<body class="font-['Open_Sans'] bg-gray-900 text-white">
+    <nav class="relative h-[180px] md:h-[120px] lg:h-[180px]">
+        <div class="absolute inset-0 overflow-hidden z-0 bg-gradient-to-l from-transparent to-gray-800 via-transparent">
+            <img src="/assets/img/principalbanner.png" 
+                 alt="Banner de la Guild"
+                 class="object-cover md:object-none w-full h-full md:h-auto md:w-auto md:absolute md:right-0"
+            />
+        </div>
+        <div class="container mx-auto px-4 h-full flex flex-col md:flex-row justify-between items-center relative z-10">
+            <div class="flex items-center justify-between w-full md:w-auto py-4 md:py-0">
+                <img src="/assets/img/logo.png"
+                     alt="Logo World of Warcraft"
+                     class="max-w-[100px] md:max-w-[120px] lg:max-w-[144px]"
+                />
+                <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+            <div id="menu-items" class="hidden md:flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-6 lg:space-x-8 w-full md:w-auto pb-4 md:pb-0">
+                <a href="#" class="text-lg hover:underline text-white">Inicio</a>
+                <a href="#" class="text-lg hover:underline text-white">Sobre Nosotros</a>
+                <a href="#" class="text-lg hover:underline text-white">Roster</a>
+                <a href="#" class="text-lg hover:underline text-white">Eventos</a>
+                <a href="#" class="text-lg hover:underline text-white">Reclutamiento</a>
+                <button class="bg-yellow-600 hover:bg-yellow-700 text-gray-900 font-bold py-2 px-4 rounded-lg border-4 border-yellow-900 shadow-lg transform hover:scale-105 transition-transform duration-200 w-full md:w-auto">
+                    Iniciar Sesión
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mx-auto px-4 py-8">
+        <h2 class="text-3xl font-bold mb-8 text-center font-['Cinzel'] text-yellow-500">Política de Loot</h2>
+        
+        <div class="max-w-3xl mx-auto bg-gray-800 p-8 rounded-lg shadow-lg">
+            <section class="mb-8">
+                <h3 class="text-2xl font-bold mb-4 text-yellow-500">1. Sistema de Loot</h3>
+                <p class="mb-4">Utilizamos un sistema de Loot Council para distribuir el botín de las raids. Este sistema nos permite asignar el loot de manera que beneficie más al progreso de la guild en general.</p>
+                <p>El Loot Council está compuesto por el líder de la raid, los oficiales de la guild y un representante rotativo de los raiders.</p>
+            </section>
+
+            <section class="mb-8">
+                <h3 class="text-2xl font-bold mb-4 text-yellow-500">2. Criterios de Distribución</h3>
+                <p class="mb-4">El Loot Council considerará los siguientes factores al asignar el loot:</p>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li>Mejora relativa para el jugador y el raid</li>
+                    <li>Asistencia y puntualidad a las raids</li>
+                    <li>Rendimiento y esfuerzo durante las raids</li>
+                    <li>Tiempo desde la última asignación de loot significativo</li>
+                    <li>Rol del jugador (tanque, sanador, DPS)</li>
+                </ul>
+            </section>
+
+            <section class="mb-8">
+                <h3 class="text-2xl font-bold mb-4 text-yellow-500">3. Prioridades de Loot</h3>
+                <p class="mb-4">En general, seguiremos estas prioridades:</p>
+                <ol class="list-decimal pl-6 space-y-2">
+                    <li>Objetos de nivel de objeto (iLvl) más alto para roles principales</li>
+                    <li>Set de tier para clases que más se benefician</li>
+                    <li>Armas y trinkets para roles de DPS principales</li>
+                    <li>Equipo defensivo para tanques</li>
+                    <li>Objetos de sanación para sanadores</li>
+                </ol>
+            </section>
+
+            <section class="mb-8">
+                <h3 class="text-2xl font-bold mb-4 text-yellow-500">4. Loot para Miembros Nuevos</h3>
+                <p>Los nuevos miembros estarán en un período de prueba de 2 semanas. Durante este tiempo, tendrán menor prioridad en la asignación de loot, a menos que el objeto sea un aumento significativo y no sea necesario para los miembros establecidos.</p>
+            </section>
+
+            <section class="mb-8">
+                <h3 class="text-2xl font-bold mb-4 text-yellow-500">5. Objetos BoE y Materiales</h3>
+                <p>Los objetos BoE (Bind on Equip) de alto valor y los materiales raros se considerarán propiedad de la guild. Estos pueden ser asignados a miembros o vendidos para financiar los gastos de la guild, como reparaciones o consumibles para raids.</p>
+            </section>
+
+            <section>
+                <h3 class="text-2xl font-bold mb-4 text-yellow-500">6. Apelaciones y Transparencia</h3>
+                <p class="mb-4">Si un miembro siente que una decisión de loot fue injusta, puede apelar en privado a los oficiales de la guild. Nos esforzamos por ser transparentes en nuestras decisiones y estamos abiertos a discutir y explicar las asignaciones de loot.</p>
+                <p>Mantendremos un registro de las asignaciones de loot que estará disponible para todos los miembros de la guild.</p>
+            </section>
+        </div>
+
+        <div class="text-center mt-8">
+            <p class="mb-4">Recuerda que el objetivo principal de nuestra política de loot es fortalecer a la guild en su conjunto y maximizar nuestro progreso en el contenido del juego.</p>
+            <a href="#" class="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-2 px-4 rounded-lg transition duration-300">
+                Volver a la Página Principal
+            </a>
+        </div>
+    </main>
+
+    <footer class="bg-black text-center py-8 px-4 mt-8">
+        <p class="mb-4">&copy; 2024 Guardianes de Azeroth. Todos los derechos reservados.</p>
+        <div class="flex flex-wrap justify-center gap-4">
+            <a href="#" class="hover:underline">Normas de la Guild</a>
+            <a href="#" class="hover:underline">Política de Loot</a>
+            <a href="#" class="hover:underline">Contacto</a>
+        </div>
+    </footer>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'cinzel': ['Cinzel', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+<script>
+    document.getElementById('mobile-menu-button').addEventListener('click', function() {
+        var menuItems = document.getElementById('menu-items');
+        menuItems.classList.toggle('hidden');
+    });
+</script>
+</body>
+</html>
