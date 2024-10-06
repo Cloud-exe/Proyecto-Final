@@ -3,39 +3,50 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Guardianes de Azeroth - Guild de World of Warcraft</title>
+    <title>CLOUD - Guild de World of Warcraft</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap');
     </style>
+    <script src="/js/main.js" defer></script>
+    <script src="/js/config.js" defer></script>
+
 </head>
 <body class="font-sans">
     <nav class="flex justify-between relative h-[180px]">
         <div class="absolute inset-0 overflow-hidden z-0 bg-gradient-to-l from-transparent to-gray-800 via-transparent">
-            <img src="/assets/img/principalbanner.png" 
-                 alt="Banner de la Guild"
-                 class="object-none absolute right-0"
-            />
+            <img src="/assets/img/principalbanner.png" alt="Banner de la Guild" class="object-none absolute right-0" />
         </div>
         <div class="flex justify-start space-x-8 relative z-10">
-            <img src="/assets/img/logo.png"
-                 alt="Logo World of Warcraft"
-                 class="max-w-36 mx-auto mb-4"
-            />
+            <img src="/assets/img/logo.png" alt="Logo World of Warcraft" class="max-w-36 mx-auto mb-4" />
         </div>
-        <div class="p-4 flex items-center space-x-8 relative z-10">
-            <a href="#" class="text-lg hover:underline">Inicio</a>
-            <a href="#" class="text-lg hover:underline">Sobre Nosotros</a>
-            <a href="#" class="text-lg hover:underline">Roster</a>
-            <a href="#" class="text-lg hover:underline">Eventos</a>
-            <a href="#" class="text-lg hover:underline">Reclutamiento</a>
-            <button class="bg-yellow-600 hover:bg-yellow-700 text-gray-900 font-bold py-2 px-4 rounded-lg border-4 border-yellow-900 shadow-lg transform hover:scale-105 transition-transform duration-200">
-                Iniciar Sesión
-            </button>
+        <div class="p-4 flex items-center space-x-8 relative z-10 text-yellow-500">
+            <a href="/index.html" class="text-2xl font-bold hover:underline hover:text-yellow-500">Inicio</a>
+            <a href="/pages/news.html" class="text-2xl font-bold hover:underline hover:text-yellow-500">Noticias</a>
+            <a href="/pages/normas.html" class="text-2xl font-bold hover:underline hover:text-yellow-500">Normas</a>
+            <a href="/pages/loot.html" class="text-2xl font-bold hover:underline hover:text-yellow-500">Loot</a>
+            <a href="/pages/form.html" class="text-2xl font-bold hover:underline hover:text-yellow-500">Reclutamiento</a>
+            <a id="userLog" href="/pages/login.html" class="text-lg font-bold hover:underline hover:text-yellow-500">
+                <button class="bg-yellow-600 hover:bg-yellow-700 text-gray-900 font-bold py-2 px-4 rounded-lg border-4 border-yellow-900 shadow-lg transform hover:scale-105 transition-transform duration-200">
+                    Iniciar Sesión
+                </button>
+            </a>
+            <div class="relative ml-3">
+                <div>
+                    <button type="button" class="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
+                        <span class="absolute -inset-1.5"></span>
+                        <span class="sr-only">Open user menu</span>
+                        <img class="h-12 w-12 rounded-full" src="/assets/img/profile4.jpg" alt="">
+                    </button>
+                </div>
+                <div class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none hidden" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1" id="dropdown-menu">
+                    <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0">Your Profile</a>
+                    <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-1">Settings</a>
+                    <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-2">Sign out</a>
+                </div>
+            </div>
         </div>
     </nav>
-    
-
     <section class="relative h-[500px]">
         <div class="absolute inset-0 overflow-hidden">
           <video id="background-video" src="/assets/video/main-page.mp4"
@@ -120,13 +131,12 @@
               <div class="bg-gray-700 rounded-lg p-6 mb-6">
                   <h3 class="text-xl font-bold mb-2">Raid Mítica: Castillo de Nathria</h3>
                   <p class="mb-4">Jueves, 20:00 hora del servidor</p>
-                  <a href="#" class="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-2 px-4 rounded">Apuntarse</a>
               </div>
               <div class="bg-gray-700 rounded-lg p-6">
                   <h3 class="text-xl font-bold mb-2">PvP: Arena 3v3</h3>
                   <p class="mb-4">Sábado, 18:00 hora del servidor</p>
-                  <a href="#" class="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-2 px-4 rounded">Apuntarse</a>
               </div>
+              
           </div>
       </div>
   </section>
@@ -137,7 +147,7 @@
         <p class="text-lg mb-8 max-w-2xl mx-auto">
             ¿Buscas una guild comprometida con el progreso y la camaradería? ¡Estamos reclutando! Buscamos jugadores activos y dedicados para nuestro equipo principal de raids y PvP.
         </p>
-        <a href="#" class="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-3 px-6 rounded-lg text-lg">Solicitar Ingreso</a>
+        <a href="/pages/form.html" class="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-3 px-6 rounded-lg text-lg">Solicitar Ingreso</a>
     </section>
 
     <footer class="bg-black text-center py-8 px-4">
@@ -149,37 +159,23 @@
         </div>
     </footer>
 
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        'cinzel': ['Cinzel', 'serif'],
-                    }
-                }
-            }
-        };
-    
-        document.addEventListener("DOMContentLoaded", function() {
-            const video = document.getElementById("background-video");
-    
-            const observer = new IntersectionObserver(function(entries) {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        video.play().catch(error => {
-                            console.log("Error al intentar reproducir el video:", error);
-                        });
-                    } else {
-                        video.pause();
-                    }
-                });
-            });
-    
-            observer.observe(video);
-        });
-    </script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    const button = document.getElementById('user-menu-button');
+    const dropdown = document.getElementById('dropdown-menu');
+
+    button.addEventListener('click', function() {
+        dropdown.classList.toggle('hidden');
+    });
+
+    window.addEventListener('click', function(event) {
+        if (!button.contains(event.target) && !dropdown.contains(event.target)) {
+            dropdown.classList.add('hidden');
+        }
+    });
+});
+</script>
 </body>
 
 
-</script>
 </html>

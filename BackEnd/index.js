@@ -10,14 +10,12 @@ const bcrypt = require('bcrypt');
 
 app.use(express.json());
 app.use(cors());
-// app.use(bcrypt());
 
 // Ruta para crear un nuevo usuario
 app.post('/usuarios', async (req, res) => {
     try {
         const { nombre, email, clase, nombrePersonaje, rol, password } = req.body;
 
-        // Asegúrate de que se proporcionen los datos necesarios
         if (!nombre || !email || !clase || !nombrePersonaje || !rol || !password) {
             return res.status(400).json({ error: 'Faltan datos requeridos: nombre, email, clase, nombrePersonaje, rol y password' });
         }
@@ -44,12 +42,9 @@ app.get('/usuarios', async (req, res) => {
 });
 
 // Ruta para iniciar sesión
-
-
 app.post('/login', async (req, res) => {
     const { email, password } = req.body;
 
-    // Asegúrate de que se proporcionen los datos necesarios
     if (!email || !password) {
         return res.status(400).json({ error: 'Faltan datos requeridos: email y password' });
     }
@@ -67,7 +62,6 @@ app.post('/login', async (req, res) => {
             return res.status(401).json({ error: 'Credenciales incorrectas' });
         }
 
-        // Autenticación exitosa
         res.status(200).json({ mensaje: 'Inicio de sesión exitoso', usuario });
     } catch (error) {
         console.error('Error en el login:', error);

@@ -8,29 +8,45 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Open+Sans:wght@400;600&display=swap');
     </style>
+    <script src="/js/main.js" defer></script>
+    <script src="/js/config.js" defer></script>
 </head>
 <body class="font-['Open_Sans'] bg-gray-900 text-white">
-    <header class="bg-black p-4 shadow-lg">
-        <div class="container mx-auto flex justify-between items-center">
-            <div class="flex items-center">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/WoW_icon.svg/2048px-WoW_icon.svg.png" alt="World of Warcraft Logo" class="w-12 h-12 mr-4">
-                <h1 class="text-2xl font-cinzel font-bold text-yellow-500">Noticias de Azeroth</h1>
-            </div>
-            <nav>
-                <a href="#" class="text-yellow-500 hover:text-yellow-400 mx-2">Inicio</a>
-                <a href="#" class="text-yellow-500 hover:text-yellow-400 mx-2">Actualizaciones</a>
-                <a href="#" class="text-yellow-500 hover:text-yellow-400 mx-2">Eventos</a>
-                <a href="#" class="text-yellow-500 hover:text-yellow-400 mx-2">Guías</a>
-            </nav>
+    <nav class="flex justify-between relative h-[180px]">
+        <div class="absolute inset-0 overflow-hidden z-0 bg-gradient-to-l from-transparent to-gray-800 via-transparent">
+            <img src="/assets/img/principalbanner.png" 
+                 alt="Banner de la Guild"
+                 class="object-none absolute right-0"
+            />
         </div>
-    </header>
+        <div class="flex justify-start space-x-8 relative z-10">
+            <img src="/assets/img/logo.png"
+                 alt="Logo World of Warcraft"
+                 class="max-w-36 mx-auto mb-4"
+            />
+        </div>
+        <div class="p-4 flex items-center space-x-8 relative z-10 text-yellow-500">
+            <a href="/index.html" class="text-2xl font-bold hover:underline hover:text-yellow-500">Inicio</a>
+            <a href="/pages/news.html" class="text-2xl font-bold hover:underline hover:text-yellow-500">Noticias</a>
+            <a href="/pages/normas.html" class="text-2xl font-bold hover:underline hover:text-yellow-500">Normas</a>
+            <a href="/pages/loot.html" class="text-2xl font-bold hover:underline hover:text-yellow-500">Loot</a>
+            <a href="/pages/form.html" class="text-2xl font-bold hover:underline hover:text-yellow-500">Reclutamiento</a>
+            <a href="/pages/login.html" class="text-lg font-bold hover:underline hover:text-yellow-500">
+                <button class="bg-yellow-600 hover:bg-yellow-700 text-gray-900 font-bold py-2 px-4 rounded-lg border-4 border-yellow-900 shadow-lg transform hover:scale-105 transition-transform duration-200">
+                    Iniciar Sesión
+                </button>
+            </a>
+        </div>
+        
+        
+    </nav>
 
     <main class="container mx-auto mt-8 px-4">
         <section class="mb-12">
             <h2 class="text-3xl font-cinzel font-bold text-yellow-500 mb-6">Noticias Destacadas</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <article class="bg-gray-800 rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:scale-105">
-                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/wow-news-1-Wd0Ue9Yl9Ht5Ue5Ue9Yl9Ht5Ue.jpg" alt="Nueva expansión" class="w-full h-48 object-cover">
+                    <img src="/assets/img/m1.avif" alt="Nueva expansión" class="w-full h-48 object-cover">
                     <div class="p-4">
                         <h3 class="text-xl font-bold mb-2">Nueva Expansión Anunciada: El Despertar de Azeroth</h3>
                         <p class="text-gray-400 mb-4">Blizzard revela la próxima gran aventura que llevará a los jugadores a las profundidades inexploradas del mundo.</p>
@@ -38,7 +54,7 @@
                     </div>
                 </article>
                 <article class="bg-gray-800 rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:scale-105">
-                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/wow-news-2-Wd0Ue9Yl9Ht5Ue5Ue9Yl9Ht5Ue.jpg" alt="Torneo PvP" class="w-full h-48 object-cover">
+                    <img src="/assets/img/pvp.webp" alt="Torneo PvP" class="w-full h-48 object-cover">
                     <div class="p-4">
                         <h3 class="text-xl font-bold mb-2">Gran Torneo PvP: La Arena de los Campeones</h3>
                         <p class="text-gray-400 mb-4">Prepárate para el mayor evento PvP del año. ¡Grandes premios y gloria eterna esperan!</p>
@@ -46,7 +62,7 @@
                     </div>
                 </article>
                 <article class="bg-gray-800 rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:scale-105">
-                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/wow-news-3-Wd0Ue9Yl9Ht5Ue5Ue9Yl9Ht5Ue.jpg" alt="Nueva clase" class="w-full h-48 object-cover">
+                    <img src="/assets/img/newevoker.jpg" alt="Nueva clase" class="w-full h-48 object-cover">
                     <div class="p-4">
                         <h3 class="text-xl font-bold mb-2">Nueva Clase Revelada: El Guardián del Tiempo</h3>
                         <p class="text-gray-400 mb-4">Domina el flujo del tiempo y altera el destino de las batallas con esta nueva y emocionante clase.</p>
@@ -90,8 +106,9 @@
                     <li><a href="#" class="hover:text-yellow-500">Guía de profesiones: Maximiza tus ganancias en el nuevo parche</a></li>
                 </ul>
             </div>
+            
             <div>
-                <h2 class="text-2xl font-cinzel font-bold text-yellow-500 mb-4">Comunidad</h2>
+                <h2 class="text-2xl font-cinzel font-bold text-yellow-500 mb-4">Comunidad Oficial</h2>
                 <div class="bg-gray-800 rounded-lg p-4">
                     <p class="mb-4">Únete a la conversación y comparte tus experiencias con otros jugadores.</p>
                     <a href="#" class="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-2 px-4 rounded transition duration-300 ease-in-out inline-block">Foros de la Comunidad</a>
@@ -111,16 +128,7 @@
         </div>
     </footer>
 
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        'cinzel': ['Cinzel', 'serif'],
-                    }
-                }
-            }
-        }
-    </script>
+
+
 </body>
 </html>

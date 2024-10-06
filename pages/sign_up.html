@@ -8,13 +8,17 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap');
     </style>
+    <script src="/js/main.js" defer></script>
+    <script src="/js/config.js" defer></script>
+
+
 </head>
-<body class="font-sans min-h-screen flex items-center justify-center bg-cover bg-center" style="background-image: url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/wow-background-Wd0Ue9Yl9Ht5Ue5Ue9Yl9Ht5Ue.jpg');">
+<body class="font-sans min-h-screen flex items-center justify-center bg-cover bg-center" style="background-image: url('/assets/img/back.avif');">
     <div class="w-full max-w-md">
         <form id="registerForm" class="bg-black bg-opacity-80 shadow-md rounded-lg px-8 pt-6 pb-8 mb-4 border border-yellow-500">
             <div class="mb-6 text-center">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/WoW_icon.svg/2048px-WoW_icon.svg.png" alt="World of Warcraft Logo" class="w-24 mx-auto mb-4">
-                <h2 class="text-3xl font-bold font-cinzel text-yellow-500">Registrar Usuario</h2>
+                <img src="/assets/img/logo.png" alt="World of Warcraft Logo" class="w-40 mx-auto mb-4">
+                <h2 class="text-3xl font-bold font-cinzel text-yellow-500">Registro</h2>
             </div>
             <div class="mb-4">
                 <label class="block text-yellow-500 text-sm font-bold mb-2" for="nombre">
@@ -66,59 +70,15 @@
                 <button id="submitButton" class="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition duration-300 ease-in-out transform hover:scale-105" type="submit">
                     Registrarse en el Reino
                 </button>
+                <a class="inline-block align-baseline font-bold text-sm text-yellow-500 hover:text-yellow-400" href="/pages/login.html">
+                    ¿Ya Tienes Cuenta?
+                </a>
             </div>
         </form>
         <p class="text-center text-gray-300 text-xs">
-            &copy;2024 Blizzard Entertainment. Todos los derechos reservados.
+            &copy;2024 CLOUD. Todos los derechos reservados.
         </p>
     </div>
-    <script>
-        // Configuración de Tailwind
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        'cinzel': ['Cinzel', 'serif'],
-                    }
-                }
-            }
-        };
-
-        // Manejo del envío del formulario
-        document.getElementById('registerForm').addEventListener('submit', async (event) => {
-            event.preventDefault(); // Evitar el envío normal del formulario
-
-            const nombre = document.getElementById('nombre').value;
-            const email = document.getElementById('email').value;
-            const clase = document.getElementById('clase').value;
-            const nombrePersonaje = document.getElementById('nombrePersonaje').value;
-            const rol = document.getElementById('rol').value;
-            const password = document.getElementById('password').value;
-
-
-            try {
-                const response = await fetch('http://localhost:3000/usuarios', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({ nombre, email, clase, nombrePersonaje, rol }),
-                });
-
-                if (response.ok) {
-                    const nuevoUsuario = await response.json();
-                    alert('Usuario creado: ' + JSON.stringify(nuevoUsuario));
-                    // Aquí podrías redirigir al usuario a otra página o limpiar el formulario
-                    document.getElementById('registerForm').reset();
-                } else {
-                    const error = await response.json();
-                    alert('Error: ' + error.error);
-                }
-            } catch (error) {
-                console.error('Error al crear el usuario:', error);
-                alert('Error al crear el usuario. Por favor, intenta de nuevo.');
-            }
-        });
-    </script>
+    
 </body>
 </html>
