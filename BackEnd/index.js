@@ -1,7 +1,7 @@
 require('dotenv').config();
 const express = require('express');
-const sequelize = require('./config/config');
-const Usuario = require('./models/Usuario');
+const sequelize = require('./config/config'); // Asegúrate de que la ruta sea correcta
+const Usuario = require('./models/Usuario'); // Asegúrate de que la ruta sea correcta
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -12,6 +12,12 @@ app.use(express.json());
 app.post('/usuarios', async (req, res) => {
     try {
         const { nombre, email } = req.body;
+
+        // Asegúrate de que se proporcionen los datos necesarios
+        if (!nombre || !email) {
+            return res.status(400).json({ error: 'Faltan datos requeridos: nombre y email' });
+        }
+
         const nuevoUsuario = await Usuario.create({ nombre, email });
         res.status(201).json(nuevoUsuario);
     } catch (error) {
@@ -36,7 +42,9 @@ const startServer = async () => {
     try {
         await sequelize.authenticate();
         console.log('Conexión a la base de datos establecida.');
-        await sequelize.sync({ force: true }); // Cambia a false si no quieres que se reemplacen las tablas
+        
+        // Cambia 'force: true' solo en desarrollo, ya que eliminará tablas existentes
+        await sequelize.sync({ force: false }); // Cambia a true solo si necesitas reiniciar la DB
         console.log('Tablas sincronizadas.');
 
         app.listen(port, () => {
