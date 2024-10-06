@@ -11,28 +11,26 @@
     </style>
     <script src="/js/main.js" defer></script>
     <script src="/js/config.js" defer></script>
-
 </head>
 
 <body class="font-sans">
-    <nav class="flex justify-between relative h-[180px]">
+    <nav class="flex justify-between relative h-[180px]" role="navigation" aria-label="Navegación principal">
         <div class="absolute inset-0 overflow-hidden z-0 bg-gradient-to-l from-transparent to-gray-800 via-transparent">
-            <img src="/assets/img/principalbanner.png" alt="Banner de la Guild" class="object-none absolute right-0" />
+            <img src="/assets/img/principalbanner.png" alt="Banner decorativo de la Guild" class="object-none absolute right-0" />
         </div>
         <div class="flex justify-start space-x-8 relative z-10">
             <a href="/index.html"><img src="/assets/img/logo.png" alt="Logo World of Warcraft" class="max-w-36 mx-auto mb-4" /></a>
-            
         </div>
         <div class="p-4 flex items-center space-x-8 relative z-10 text-yellow-500">
             <a href="/index.html" class="text-2xl font-bold hover:underline hover:text-yellow-500">Inicio</a>
             <a href="/pages/news.html" class="text-2xl font-bold hover:underline hover:text-yellow-500">Noticias</a>
             <a href="/pages/normas.html" class="text-2xl font-bold hover:underline hover:text-yellow-500">Normas</a>
             <a href="/pages/loot.html" class="text-2xl font-bold hover:underline hover:text-yellow-500">Loot</a>
-            <a href="/pages/form.html"
-                class="text-2xl font-bold hover:underline hover:text-yellow-500">Reclutamiento</a>
+            <a href="/pages/form.html" class="text-2xl font-bold hover:underline hover:text-yellow-500">Reclutamiento</a>
             <a id="userLog" href="/pages/login.html" class="text-lg font-bold hover:underline hover:text-yellow-500">
                 <button
-                    class="bg-yellow-600 hover:bg-yellow-700 text-gray-900 font-bold py-2 px-4 rounded-lg border-4 border-yellow-900 shadow-lg transform hover:scale-105 transition-transform duration-200">
+                    class="bg-yellow-600 hover:bg-yellow-700 text-gray-900 font-bold py-2 px-4 rounded-lg border-4 border-yellow-900 shadow-lg transform hover:scale-105 transition-transform duration-200"
+                    aria-label="Iniciar Sesión">
                     Iniciar Sesión
                 </button>
             </a>
@@ -40,10 +38,10 @@
                 <div>
                     <button type="button"
                         class="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
-                        id="user-menu-button" aria-expanded="false" aria-haspopup="true">
+                        id="user-menu-button" aria-expanded="false" aria-haspopup="true" aria-label="Abrir menú de usuario">
                         <span class="absolute -inset-1.5"></span>
-                        <span class="sr-only">Open user menu</span>
-                        <img class="h-12 w-12 rounded-full" src="/assets/img/profile4.jpg" alt="">
+                        <span class="sr-only">Abrir menú de usuario</span>
+                        <img class="h-12 w-12 rounded-full" src="/assets/img/profile4.jpg" alt="Foto de perfil del usuario">
                     </button>
                 </div>
                 <div class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none hidden"
@@ -51,25 +49,22 @@
                     id="dropdown-menu">
                     <a href="/pages/profile.html" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
                         id="user-menu-item-0">Perfil</a>
-                    
                     <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
                         id="user-menu-item-2">Cerrar Sesión</a>
-                     
                 </div>
             </div>
         </div>
     </nav>
-    <section class="relative h-[500px]">
+    <section class="relative h-[500px]" aria-label="Bienvenida a la Hermandad CLOUD">
         <div class="absolute inset-0 overflow-hidden">
-            <video id="background-video" src="/assets/video/main-page.mp4" alt="Banner de la Guild"
+            <video id="background-video" src="/assets/video/main-page.mp4" alt="Video de fondo de la Guild"
                 class="w-full h-full object-cover" autoplay muted loop playsinline></video>
-
         </div>
         <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center text-center">
             <div class="max-w-4xl px-4">
-                <h2 class="text-4xl md:text-5xl font-bold mb-4 text-shadow font-['Cinzel']">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4 text-shadow font-['Cinzel']">
                     Bienvenidos a la Hermandad CLOUD
-                </h2>
+                </h1>
                 <p class="text-lg md:text-xl mb-8">
                     Somos una guild dedicada al progreso en raids míticas y PvE de alto nivel. Únete a nosotros en
                     nuestra búsqueda de la gloria en Azeroth.
@@ -78,90 +73,85 @@
         </div>
     </section>
 
-    <section class="py-16 px-4">
-        <h2 class="text-3xl font-bold mb-8 text-center font-['Cinzel'] text-yellow-500">Nuestro Roster</h2>
+    <section class="py-16 px-4" aria-labelledby="roster-title">
+        <h2 id="roster-title" class="text-3xl font-bold mb-8 text-center font-['Cinzel'] text-yellow-500">Nuestro Roster</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-            <div class="bg-gray-800 rounded-lg p-4 shadow-lg">
-                <img src="/assets/img/profile1.jpg" alt="Thralldor" class="w-24 h-24 rounded-full mx-auto mb-4" />
+            <div class="bg-gray-800 rounded-lg p-4 shadow-lg" role="article" aria-label="Perfil de Thralldor">
+                <img src="/assets/img/profile1.jpg" alt="Foto de perfil de Thralldor" class="w-24 h-24 rounded-full mx-auto mb-4" />
                 <h3 class="text-xl font-bold text-center mb-2">Thralldor</h3>
                 <p class="text-center text-gray-400">Tanque - Guerrero</p>
                 <p class="text-center">Nivel 60 - iLvl 415</p>
             </div>
-            <div class="bg-gray-800 rounded-lg p-4 shadow-lg">
-                <img src="/assets/img/profile2.jpg" alt="Sylvanas" class="w-24 h-24 rounded-full mx-auto mb-4" />
+            <div class="bg-gray-800 rounded-lg p-4 shadow-lg" role="article" aria-label="Perfil de Sylvanas">
+                <img src="/assets/img/profile2.jpg" alt="Foto de perfil de Sylvanas" class="w-24 h-24 rounded-full mx-auto mb-4" />
                 <h3 class="text-xl font-bold text-center mb-2">Sylvanas</h3>
                 <p class="text-center text-gray-400">DPS - Cazadora</p>
                 <p class="text-center">Nivel 60 - iLvl 412</p>
             </div>
-            <div class="bg-gray-800 rounded-lg p-4 shadow-lg">
-                <img src="/assets/img/profile3.jpg" alt="Anduin" class="w-24 h-24 rounded-full mx-auto mb-4" />
+            <div class="bg-gray-800 rounded-lg p-4 shadow-lg" role="article" aria-label="Perfil de Anduin">
+                <img src="/assets/img/profile3.jpg" alt="Foto de perfil de Anduin" class="w-24 h-24 rounded-full mx-auto mb-4" />
                 <h3 class="text-xl font-bold text-center mb-2">Anduin</h3>
                 <p class="text-center text-gray-400">Sanador - Sacerdote</p>
                 <p class="text-center">Nivel 60 - iLvl 410</p>
             </div>
-
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto mt-6">
-            <div class="bg-gray-800 rounded-lg p-4 shadow-lg">
-                <img src="/assets/img/profile4.jpg" alt="Thralldor" class="w-24 h-24 rounded-full mx-auto mb-4" />
+            <div class="bg-gray-800 rounded-lg p-4 shadow-lg" role="article" aria-label="Perfil de Thralldor">
+                <img src="/assets/img/profile4.jpg" alt="Foto de perfil de Thralldor" class="w-24 h-24 rounded-full mx-auto mb-4" />
                 <h3 class="text-xl font-bold text-center mb-2">Thralldor</h3>
                 <p class="text-center text-gray-400">Tanque - Guerrero</p>
                 <p class="text-center">Nivel 60 - iLvl 415</p>
             </div>
-            <div class="bg-gray-800 rounded-lg p-4 shadow-lg">
-                <img src="/assets/img/profile5.jpg" alt="Sylvanas" class="w-24 h-24 rounded-full mx-auto mb-4" />
+            <div class="bg-gray-800 rounded-lg p-4 shadow-lg" role="article" aria-label="Perfil de Sylvanas">
+                <img src="/assets/img/profile5.jpg" alt="Foto de perfil de Sylvanas" class="w-24 h-24 rounded-full mx-auto mb-4" />
                 <h3 class="text-xl font-bold text-center mb-2">Sylvanas</h3>
                 <p class="text-center text-gray-400">DPS - Cazadora</p>
                 <p class="text-center">Nivel 60 - iLvl 412</p>
             </div>
-            <div class="bg-gray-800 rounded-lg p-4 shadow-lg">
-                <img src="/assets/img/profile6.jpg" alt="Anduin" class="w-24 h-24 rounded-full mx-auto mb-4" />
+            <div class="bg-gray-800 rounded-lg p-4 shadow-lg" role="article" aria-label="Perfil de Anduin">
+                <img src="/assets/img/profile6.jpg" alt="Foto de perfil de Anduin" class="w-24 h-24 rounded-full mx-auto mb-4" />
                 <h3 class="text-xl font-bold text-center mb-2">Anduin</h3>
                 <p class="text-center text-gray-400">Sanador - Sacerdote</p>
                 <p class="text-center">Nivel 60 - iLvl 410</p>
             </div>
-
         </div>
-
     </section>
 
-
-
-    <section class="relative h-[500px]">
+    <section class="relative h-[500px]" aria-labelledby="events-title">
         <div class="absolute inset-0 overflow-hidden">
-            <img src="/assets/img/W2SZUAZPYRTJ1719950644897.webp" alt="Banner de la Guild"
+            <img src="/assets/img/W2SZUAZPYRTJ1719950644897.webp" alt="Imagen de fondo de eventos"
                 class="w-full h-full object-cover" />
         </div>
         <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center text-center">
             <div class="max-w-4xl px-4">
-                <h2 class="text-3xl font-bold mb-8 font-['Cinzel'] text-yellow-500">Próximos Eventos</h2>
-                <div class="bg-gray-700 rounded-lg p-6 mb-6">
+                <h2 id="events-title" class="text-3xl font-bold mb-8 font-['Cinzel'] text-yellow-500">Próximos Eventos</h2>
+                <div class="bg-gray-700 rounded-lg p-6 mb-6" role="article" aria-label="Evento de Raid Mítica">
                     <h3 class="text-xl font-bold mb-2">Raid Mítica: Castillo de Nathria</h3>
                     <p class="mb-4">Jueves, 20:00 hora del servidor</p>
                 </div>
-                <div class="bg-gray-700 rounded-lg p-6">
+                <div class="bg-gray-700 rounded-lg p-6" role="article" aria-label="Evento de PvP">
                     <h3 class="text-xl font-bold mb-2">PvP: Arena 3v3</h3>
                     <p class="mb-4">Sábado, 18:00 hora del servidor</p>
                 </div>
-
             </div>
         </div>
     </section>
 
-
-    <section class="py-16 px-4 text-center">
-        <h2 class="text-3xl font-bold mb-8 font-['Cinzel'] text-yellow-500">Únete a Nosotros</h2>
+    <section class="py-16 px-4 text-center" aria-labelledby="join-title">
+        <h2 id="join-title" class="text-3xl font-bold mb-8 font-['Cinzel'] text-yellow-500">Únete a Nosotros</h2>
         <p class="text-lg mb-8 max-w-2xl mx-auto">
             ¿Buscas una guild comprometida con el progreso y la camaradería? ¡Estamos reclutando! Buscamos jugadores
             activos y dedicados para nuestro equipo principal de raids y PvP.
         </p>
         <a href="/pages/form.html"
-            class="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-3 px-6 rounded-lg text-lg">Solicitar
+            class="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-3 px-6 rounded-lg text-lg"
+            role="button"
+            aria-label="Solicitar ingreso a la guild">Solicitar
             Ingreso</a>
     </section>
 
-    <footer class="bg-black text-center py-8 px-4">
+    <footer class="bg-black text-center py-8 px-4" role="contentinfo">
         <p class="mb-4">&copy; 2024 CLOUD-GUILD. Todos los derechos reservados.</p>
         <div class="flex flex-wrap justify-center gap-4">
             <a href="#" class="hover:underline">CLOUD</a>
@@ -169,9 +159,6 @@
             <a href="#" class="hover:underline">Contacto</a>
         </div>
     </footer>
-
-    <script>
-        
-    </script>
-    
 </body>
+
+</html>

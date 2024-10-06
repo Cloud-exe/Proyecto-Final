@@ -27,10 +27,10 @@ document.getElementById('registerForm').addEventListener('submit', async (event)
         });
 
         if (response.ok) {
-            const nuevoUsuario = await response.json();
-            alert('Usuario creado: ' + JSON.stringify(nuevoUsuario));
+            const usuario = await response.json();
+            alert('Usuario creado con exito');
             document.getElementById('registerForm').reset();
-            localStorage.setItem('usuario', JSON.stringify(nuevoUsuario));
+            localStorage.setItem('usuario', JSON.stringify(usuario));
             window.location.href = '/index.html';
         } else {
             const error = await response.json();

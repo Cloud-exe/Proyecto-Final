@@ -22,8 +22,10 @@ app.post('/usuarios', async (req, res) => {
         }
         const hashPassword = await bcrypt.hash(password, 10);
 
-        const nuevoUsuario = await Usuario.create({ nombre, email, clase, nombrePersonaje, rol, password: hashPassword });
-        res.status(201).json(nuevoUsuario);
+        const usuario = await Usuario.create({ nombre, email, clase, nombrePersonaje, rol, password: hashPassword });
+
+        res.status(201).json({ mensaje: 'Inicio de sesión exitoso', usuario });
+
     } catch (error) {
         console.error('Error al crear el usuario:', error);
         res.status(500).send('Error al crear el usuario');

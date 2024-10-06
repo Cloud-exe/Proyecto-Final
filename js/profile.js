@@ -1,13 +1,13 @@
 // document.addEventListener('DOMContentLoaded', function() {
 //     const usuario = localStorage.getItem('usuario');
-    
+
 //     if (!usuario) {
 //         window.location.href = '/index.html';
 //     }
 // });
 
 window.addEventListener('DOMContentLoaded', () => {
-    const userData = JSON.parse(localStorage.getItem('usuario')); 
+    const userData = JSON.parse(localStorage.getItem('usuario'));
     if (!userData) {
         window.location.href = '/index.html';
     }
@@ -21,56 +21,75 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
 const editButton = document.getElementById('editButton');
-        const saveButton = document.getElementById('saveButton');
-        const emailSpan = document.getElementById('email');
-        const personajeSpan = document.getElementById('personaje');
-        const rolSpan = document.getElementById('rol');
-        const passwordSpan = document.getElementById('password');
-    
-        editButton.addEventListener('click', function () {
-            emailSpan.innerHTML = `<input type="text" id="emailInput" value="${emailSpan.textContent}" class="bg-gray-800 text-white border border-yellow-500 rounded p-1 w-full">`;
-            personajeSpan.innerHTML = `<input type="text" id="personajeInput" value="${personajeSpan.textContent}" class="bg-gray-800 text-white border border-yellow-500 rounded p-1 w-full">`;
-            rolSpan.innerHTML = `<input type="text" id="rolInput" value="${rolSpan.textContent}" class="bg-gray-800 text-white border border-yellow-500 rounded p-1 w-full">`;
-            passwordSpan.innerHTML = `<input type="text" id="passwordInput" value="${passwordSpan.textContent}" class="bg-gray-800 text-white border border-yellow-500 rounded p-1 w-full">`; // Cambiar `password.textContent` a `passwordSpan.textContent`
-    
-            saveButton.classList.remove('hidden');
-        });
-    
-        saveButton.addEventListener('click', function () {
-            const newEmail = document.getElementById('emailInput').value;
-            const newPersonaje = document.getElementById('personajeInput').value;
-            const newRol = document.getElementById('rolInput').value;
-            const newPassword = document.getElementById('passwordInput').value;
-    
-            // Actualiza el contenido de los spans solo si no están vacíos
-            emailSpan.textContent = newEmail || emailSpan.textContent;
-            personajeSpan.textContent = newPersonaje || personajeSpan.textContent;
-            rolSpan.textContent = newRol || rolSpan.textContent;
-            passwordSpan.textContent = newPassword || passwordSpan.textContent;
-    
-            fetch(`${CONFIG.API_URL}/guardarPerfil`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ 
-                    email: newEmail, 
-                    nombrePersonaje: newPersonaje, 
-                    rol: newRol, 
-                    password: newPassword 
-                }) // Usa las nuevas variables aquí
+const saveButton = document.getElementById('saveButton');
+const emailSpan = document.getElementById('email');
+const personajeSpan = document.getElementById('personaje');
+const rolSpan = document.getElementById('rol');
+const passwordSpan = document.getElementById('password');
+
+editButton.addEventListener('click', function () {
+    emailSpan.innerHTML = `<input type="text" id="emailInput" value="${emailSpan.textContent}" class="bg-gray-800 text-white border border-yellow-500 rounded p-1 w-full">`;
+    personajeSpan.innerHTML = `<input type="text" id="personajeInput" value="${personajeSpan.textContent}" class="bg-gray-800 text-white border border-yellow-500 rounded p-1 w-full">`;
+    personajeSpan.innerHTML = `<input type="text" id="personajeInput" value="${personajeSpan.textContent}" class="bg-gray-800 text-white border border-yellow-500 rounded p-1 w-full">`;
+    rolSpan.innerHTML = `
+    <select id="rolInput" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-gray-200" required>
+        <option value="" disabled>Selecciona tu rol</option>
+        <option value="DPS" ${rolSpan.textContent === 'DPS' ? 'selected' : ''}>DPS</option>
+        <option value="Tanque" ${rolSpan.textContent === 'Tanque' ? 'selected' : ''}>Tanque</option>
+        <option value="Healer" ${rolSpan.textContent === 'Healer' ? 'selected' : ''}>Healer</option>
+    </select>`;
+    // rolSpan.innerHTML = `<input type="text" id="rolInput" value="${rolSpan.textContent}" class="bg-gray-800 text-white border border-yellow-500 rounded p-1 w-full">`;
+    passwordSpan.innerHTML = `<input type="text" id="passwordInput" value="${passwordSpan.textContent}" class="bg-gray-800 text-white border border-yellow-500 rounded p-1 w-full">`; // Cambiar `password.textContent` a `passwordSpan.textContent`
+
+    saveButton.classList.remove('hidden');
+});
+
+saveButton.addEventListener('click', function () {
+    const newEmail = document.getElementById('emailInput').value;
+    const newPersonaje = document.getElementById('personajeInput').value;
+    const newRol = document.getElementById('rolInput').value;
+    const newPassword = document.getElementById('passwordInput').value;
+
+
+    // Actualiza el contenido de los spans solo si no están vacíos
+    emailSpan.textContent = newEmail || emailSpan.textContent;
+    personajeSpan.textContent = newPersonaje || personajeSpan.textContent;
+    rolSpan.textContent = newRol || rolSpan.textContent;
+    passwordSpan.textContent = newPassword || passwordSpan.textContent;
+
+    console.log("el rol es:" + newRol)
+    if (newRol == "DPS" || newRol == "Healer" || newRol == "Tanque") {
+        fetch(`${CONFIG.API_URL}/guardarPerfil`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                email: newEmail,
+                nombrePersonaje: newPersonaje,
+                rol: newRol,
+                password: newPassword
+            }) // Usa las nuevas variables aquí
+        })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert('Cambios guardados exitosamente');
+                } else {
+                    alert('Hubo un error al guardar los cambios');
+                }
             })
-                .then(response => response.json())
-                .then(data => {
-                    if (data.success) {
-                        alert('Cambios guardados exitosamente');
-                    } else {
-                        alert('Hubo un error al guardar los cambios');
-                    }
-                })
-                .catch(error => {
-                    console.error('Error:', error);
-                });
-    
-            saveButton.classList.add('hidden');
-        });
+            .catch(error => {
+                console.error('Error:', error);
+            });
+
+        saveButton.classList.add('hidden');
+    }
+    else {
+
+        alert('Debes Seleccionar un Rol')
+    }
+
+
+
+});
