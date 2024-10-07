@@ -1,5 +1,5 @@
 Emanuel Gomez Proyecto final de curso web 2024 - Aspacia
-Página principal: https://proyecto-final-8yap3t8do-emanuels-projects-ebdfc7f0.vercel.app/
+Página principal: https://proyecto-final-jet-theta.vercel.app/pages/profile.html
 
 Pasos a realizar:
 1) `npm i` en carpeta inicial del proyecto
