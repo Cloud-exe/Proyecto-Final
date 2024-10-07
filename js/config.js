@@ -1,5 +1,5 @@
 const CONFIG = {
-    API_URL: 'https://ubiquitous-disco-jjq457p45r49fx4v-3000.app.github.dev',
+    API_URL: 'https://crbk3mlf-3000.uks1.devtunnels.ms',
 };
 
 // const CONFIG = {
