@@ -11,4 +11,6 @@ Cuenta para iniciar sesión en la pagina web:
 ID: emmanuel@gmail.com	
 Password: 12345678
 
+A mayores puede registrarse usted mismo en la página que ya esta correguido la conexión a mi base de datos
+
 Mi base de datos esta subida a Vercel
